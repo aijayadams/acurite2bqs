@@ -64,7 +64,6 @@ func sendWeatherToBQ(messages chan inputJsonHolder, uploader *bigquery.Uploader)
 		}
 
 		if err := uploader.Put(ctx, items); err != nil {
-			log.Println("BQ: %q\n", err)
 			continue
 		}
 
